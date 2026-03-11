@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Healthcare SEO Audit | See What's Costing You Patients</title>
+<meta name="description" content="We've audited 100+ medspa and doctor websites. Most have the same 5 fixable problems. Get a free video audit showing exactly where your site is losing patients.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ═══════════════════════════════════════════════════
+     INTELLIUS MEDICAL — REUSABLE PAGE TEMPLATE
+     Use this layout for ALL content pages.
+     Rishi: Rebuild each section in Wix editor.
+     Swap content, keep structure identical.
+     ═══════════════════════════════════════════════════ */
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brand-dark: #0F172A;
+    --brand-blue: #1D4ED8;
+    --brand-blue-light: #EFF6FF;
+    --brand-green: #059669;
+    --brand-green-light: #ECFDF5;
+    --brand-orange: #EA580C;
+    --brand-orange-light: #FFF7ED;
+    --text-primary: #1E293B;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    --border: #E2E8F0;
+    --bg-page: #FFFFFF;
+    --bg-section-alt: #F8FAFC;
+    --radius: 12px;
+    --max-width: 780px;
+  }
+
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-page);
+    line-height: 1.75;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── WIX SECTION: Trust Bar (top) ─── */
+  .trust-bar {
+    background: var(--brand-dark);
+    color: #CBD5E1;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .trust-bar strong { color: #FFF; }
+
+  /* ─── WIX SECTION: Hero ─── */
+  .hero {
+    background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);
+    padding: 64px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(29,78,216,0.15) 0%, transparent 50%);
+  }
+  .hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #93C5FD;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    color: #FFF;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: #60A5FA; }
+  .hero p {
+    color: #CBD5E1;
+    font-size: 17px;
+    max-width: 560px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  /* ─── REUSABLE: CTA Button ─── */
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brand-green);
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .cta-btn:hover { background: #047857; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(5,150,105,0.3); }
+  .cta-btn-secondary {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.3);
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-left: 12px;
+    transition: all 0.2s;
+  }
+  .cta-btn-secondary:hover { border-color: #FFF; background: rgba(255,255,255,0.05); }
+  .hero-ctas { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; }
+
+  /* ─── REUSABLE: Stat Strip ─── */
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-item {
+    background: #FFF;
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--brand-blue);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* ─── WIX SECTION: Content area ─── */
+  .content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+
+  .content h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 48px 0 16px;
+    line-height: 1.3;
+  }
+  .content h2:first-child { margin-top: 0; }
+
+  .content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brand-blue);
+    margin: 36px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--brand-blue);
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .content p {
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+  }
+
+  /* ─── REUSABLE: Callout Box ─── */
+  .callout {
+    margin: 24px 0;
+    padding: 20px 24px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .callout-warning {
+    background: var(--brand-orange-light);
+    border-left: 4px solid var(--brand-orange);
+    color: #9A3412;
+  }
+  .callout-success {
+    background: var(--brand-green-light);
+    border-left: 4px solid var(--brand-green);
+    color: #065F46;
+  }
+  .callout-info {
+    background: var(--brand-blue-light);
+    border-left: 4px solid var(--brand-blue);
+    color: #1E40AF;
+  }
+
+  /* ─── REUSABLE: Result Card ─── */
+  .result-card {
+    background: var(--bg-section-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin: 28px 0;
+  }
+  .result-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .result-badge {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .result-badge-before { background: #FEE2E2; color: #991B1B; }
+  .result-badge-after { background: #D1FAE5; color: #065F46; }
+  .result-stat {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .result-stat-red { color: #DC2626; }
+  .result-stat-green { color: #059669; }
+  .result-vs { color: var(--text-muted); font-size: 20px; font-weight: 600; margin: 0 4px; }
+
+  /* ─── REUSABLE: Inline CTA Block ─── */
+  .inline-cta {
+    background: linear-gradient(135deg, #0F172A, #1E3A5F);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .inline-cta p {
+    color: #CBD5E1;
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .inline-cta strong {
+    color: #FFF;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* ─── WIX SECTION: Who We Work With ─── */
+  .specialties {
+    background: var(--bg-section-alt);
+    padding: 48px 24px;
+  }
+  .specialties-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .specialty-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .specialty-tag {
+    background: #FFF;
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  /* ─── WIX SECTION: Final CTA / Form ─── */
+  .final-cta {
+    background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);
+    padding: 64px 24px;
+    text-align: center;
+  }
+  .final-cta-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .final-cta h2 {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .final-cta p {
+    color: #94A3B8;
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  .form-mock {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    text-align: left;
+  }
+  .form-row {
+    margin-bottom: 16px;
+  }
+  .form-label {
+    display: block;
+    color: #CBD5E1;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input:focus { border-color: #60A5FA; }
+  .form-input::placeholder { color: #64748B; }
+  .form-submit {
+    width: 100%;
+    margin-top: 8px;
+  }
+  .form-note {
+    color: #64748B;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  /* ─── REUSABLE: Sticky Mobile CTA ─── */
+  .sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    padding: 12px 20px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .sticky-cta .cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  /* ─── REUSABLE: Author byline ─── */
+  .byline {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 24px 24px 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .byline-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .byline-text { font-size: 14px; color: var(--text-muted); }
+  .byline-text strong { color: var(--text-primary); }
+
+  /* ─── Mobile responsive ─── */
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 40px; }
+    .hero h1 { font-size: 28px; }
+    .hero p { font-size: 15px; }
+    .content { padding: 32px 20px; }
+    .content h2 { font-size: 24px; }
+    .content h3 { font-size: 18px; }
+    body { font-size: 16px; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); }
+    .stat-number { font-size: 26px; }
+    .inline-cta { padding: 24px 20px; }
+    .result-card { padding: 20px; }
+    .result-stat { font-size: 28px; }
+    .cta-btn-secondary { margin-left: 0; }
+    .sticky-cta { display: block; }
+    .final-cta { padding-bottom: 100px; }
+  }
+
+  /* ─── Wix section comment markers ─── */
+  /* Each major section is marked with a comment
+     Rishi rebuilds each as a Wix strip/section */
+</style>
+</head>
+<body>
+
+<!-- ═══ WIX SECTION 1: Trust Bar ═══ -->
+<div class="trust-bar">
+  <strong>100+ Healthcare Sites Audited</strong> · Millions of Impressions Analyzed · Medspas, Doctors & Surgeons
+</div>
+
+<!-- ═══ WIX SECTION 2: Hero ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Free SEO Audit for Healthcare</div>
+    <h1>See Exactly What's <span>Costing You Patients</span> on Google</h1>
+    <p>Most healthcare websites have 5 fixable problems that kill their Google rankings. We find them in 30 minutes — with a personalized video walkthrough.</p>
+    <div class="hero-ctas">
+      <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+      <a href="#how-it-works" class="cta-btn-secondary">See What We Check</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WIX SECTION 3: Stat Strip ═══ -->
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-number">100+</div>
+    <div class="stat-label">Sites Audited</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">5M+</div>
+    <div class="stat-label">Impressions Analyzed</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">30 min</div>
+    <div class="stat-label">Audit Turnaround</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">$1M+</div>
+    <div class="stat-label">Client Revenue Generated</div>
+  </div>
+</div>
+
+<!-- ═══ WIX SECTION 4: The Problem (Content) ═══ -->
+<div class="content">
+  <h2>The Real Problem With Most Healthcare Websites</h2>
+
+  <p>Most healthcare websites — doctor websites, medspas, dentists, dermatologists, podiatrists — don't have a problem with SEO itself. They have <strong>technical SEO mistakes</strong> caused by hiring low-quality SEO specialists or low-quality marketers, paying them $500 to $1,000 a month, thinking it won't cost a lot of money.</p>
+
+  <p>Instead of helping, these low-cost SEO people actually <strong>hurt your ranking and your website.</strong> They create duplicate content, thin page content, category pages, tag pages, and all kinds of nonsense. They don't just copy-paste articles — they use AI to write content that isn't informative and provides no value to patients who want real information about treatments and procedures.</p>
+
+  <p>We have audited <strong>more than 100 medspa and doctor websites.</strong> We have millions of impressions worth of data points from Google across our audits. We know the common mistakes and pitfalls every doctor and medspa owner makes when they try to do SEO on their own.</p>
+
+  <p>Here are the exact problems we find — with real examples — so you don't make the same mistakes.</p>
+</div>
+
+<!-- ═══ WIX SECTION 5: Real Example (Result Card) ═══ -->
+<div class="content" style="padding-top: 0;">
+  <h2>Real Example: A Dallas Medspa</h2>
+
+  <div class="result-card">
+    <div class="result-card-header">
+      <div>
+        <span class="result-badge result-badge-before">Before Audit</span>
+        <div class="result-stat result-stat-red" style="margin-top:8px">100K impressions</div>
+        <div style="font-size:14px;color:var(--text-muted);margin-top:4px">Only 40 clicks/month</div>
+      </div>
+      <div style="padding: 0 8px;">
+        <span class="result-vs">→</span>
+      </div>
+      <div>
+        <span class="result-badge result-badge-after">After Fixes</span>
+        <div class="result-stat result-stat-green" style="margin-top:8px">3% CTR</div>
+        <div style="font-size:14px;color:var(--text-muted);margin-top:4px">100+ visitors, 5 booked calls in one week</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--text-muted);margin:0"><strong style="color:var(--text-primary)">Fix time:</strong> One afternoon. Title tags, meta descriptions, and review stars in search results.</p>
+  </div>
+
+  <p>This medspa had more than 100 pages. Condition pages, treatment pages, procedure pages — each with around 1,000 words of content. 20+ blog posts updated weekly. Their team was doing a great job at updating the website.</p>
+
+  <p>But they were getting only 40 clicks a month from 100,000+ impressions.</p>
+
+  <p><strong>Category pages were ranking in Google.</strong> When people clicked and landed on a category page, all they saw was a bunch of blog post titles. That's it. People hit back immediately. Bounce rate: 100%. The same thing happened with tag pages.</p>
+
+  <p><strong>The pages that actually had content were unreadable.</strong> Full blocks of text. No images. No section breaks. No subheadings. No table of contents. People would land on the page, try to read the wall of text, give up, and go back to Google to book with another medspa.</p>
+
+  <div class="callout callout-success">
+    <strong>The fix took one afternoon.</strong> Small changes — title tag fixes, meta description fixes, adding five-star review ratings in search results — instantly improved their click-through rate. One page went from near-zero to 3% CTR, which produced over 100 visitors. Five of them booked a call within a week.
+  </div>
+
+  <!-- ─── INLINE CTA (repeat this after every major section) ─── -->
+  <div class="inline-cta">
+    <strong>This is probably happening to your site too.</strong>
+    <p>Most practice owners have no idea how much traffic they're losing. Our free audit shows you exactly where — in 30 minutes.</p>
+    <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+  </div>
+</div>
+
+<!-- ═══ WIX SECTION 6: What We Check (5 Steps) ═══ -->
+<div class="content" id="how-it-works" style="padding-top: 0;">
+  <h2>What We Check in 30 Minutes</h2>
+
+  <!-- STEP 1 -->
+  <h3><span class="step-num">1</span> We Google You (And You Should Too)</h3>
+
+  <p>The first thing we do is Google your main services plus the city name. <em>Medspa Dallas. Botox Dallas. HydraFacial Dallas. Laser Hair Removal Dallas.</em></p>
+
+  <p>When we search, we find out whether you're on page 1, page 2, page 3, page 4 — or maybe not showing up at all.</p>
+
+  <p>Sometimes clients come to us saying they're getting visitors but not many customers. When we look, they're ranking on page 1, position 4 or 5 — with a click-through rate around 4 to 5 percent. The problem? <strong>Title tags are not optimized and meta descriptions are not optimized.</strong></p>
+
+  <p>The title tag will be something like "Medspa Dallas" or just the brand name. No optimization at all. Why would someone click on a brand name they've never heard of? People click on the medspa that tells them <em>what they are, who they are, and what they provide</em> — all in those few characters.</p>
+
+  <p>This one fix can increase click-through rate from 4–5% to 20–30%. Your position moves from 5 or 6 to position 1 or 2, because <strong>Google rewards pages that get clicked.</strong></p>
+
+  <div class="callout callout-warning">
+    And here's the thing most owners don't realize: they tell us they rank number one whenever they search. They have no clue that they're looking at their own search history. Google personalizes results. You see yourself. Your patients don't.
+  </div>
+
+  <!-- STEP 2 -->
+  <h3><span class="step-num">2</span> Google Business Profile Audit</h3>
+
+  <p>We look at your Google My Business page. Most practices haven't updated it in a very long time. The last photo was posted <strong>three years ago.</strong> The last review was <strong>a year ago.</strong></p>
+
+  <p>It doesn't mean they're not getting clients. They are. They're just clueless about asking for more reviews. Even when they ask, it's lazy — "Hey, leave us a review." That's it. No review generation software. No follow-ups. No incentive.</p>
+
+  <p>Here's what's dangerous: a new business opening right now can quickly get 30–40 reviews in the first month just by actively asking. <strong>Google doesn't care how many hundreds of reviews you accumulated three years ago.</strong> They care about how many reviews you got last month and in the last three months.</p>
+
+  <p><strong>The quality of reviews matters too.</strong> You can have 100 five-star reviews with one-line responses. But your competitor might have only 20 reviews where each one is a full paragraph — the patient describing how caring the team was. Those 20 detailed reviews will beat your 100 one-liners every time.</p>
+
+  <!-- STEP 3 -->
+  <h3><span class="step-num">3</span> Mobile Experience Audit</h3>
+
+  <p><strong>80 to 90 percent of medspa searches happen on mobile phones.</strong> People don't open their laptop to book a Botox appointment. They're on their phone. They're driving. They're using Siri to find a medspa. They're asking Alexa to find the best medspa near them.</p>
+
+  <p>They want to instantly book an appointment. They don't have time to read your About section or understand your mission statement before they book.</p>
+
+  <p>They want to quickly see what you offer. Quickly scan who you are. Quickly see <strong>before-and-after pictures.</strong> And quickly see how many reviews you have and how good they are.</p>
+
+  <p><strong>Most medspa websites don't load within 3 seconds on mobile.</strong> Even when they do, the booking experience is terrible. People have to click through 15 steps to book an appointment. People aren't going to go through all of that. It creates a massive drop-off rate.</p>
+
+  <p>And here's something most small medspa owners ignore: <strong>phone calls during non-business hours.</strong> If someone calls after hours and you never call them back, that's a lost patient.</p>
+
+  <!-- INLINE CTA -->
+  <div class="inline-cta">
+    <strong>How does your site perform on mobile?</strong>
+    <p>We test your site on real devices and show you exactly where patients are dropping off.</p>
+    <a href="#audit-form" class="cta-btn">Get Your Free Mobile Audit →</a>
+  </div>
+
+  <!-- STEP 4 -->
+  <h3><span class="step-num">4</span> Content Gap Analysis</h3>
+
+  <p>Google can't rank you for pages you don't have.</p>
+
+  <p>Recently, an IV therapy medspa client reached out to us. They wanted to rank in Dallas — a very competitive market dominated by giants with 10+ locations and 300+ reviews each.</p>
+
+  <p>Their reviews were fine — five-star rating with 50+ reviews. But they had <strong>only 15 pages.</strong> All 15 had thin content — 300 to 500 words, all AI-written.</p>
+
+  <p>They kept asking, "We're doing a great service. Why are people not finding us?"</p>
+
+  <p>You're trying to beat enterprise companies with 1,000+ pages using your 15 thin pages. You don't need 1,000 pages to beat a giant. But <strong>you need at least 100 pages of cornerstone content</strong> to compete in a market like Dallas.</p>
+
+  <div class="callout callout-success">
+    This is exactly what we did for a medspa in Los Angeles. We grew them from zero to <strong>$1 million a year in organic revenue.</strong> Because Google can't rank you for pages you don't have. Google wants to connect the right user with the right business. But if you don't have what people are searching for, Google can't send you traffic.
+  </div>
+
+  <!-- STEP 5 -->
+  <h3><span class="step-num">5</span> Search Console Audit — Where the Real Gold Is</h3>
+
+  <p>In most medspa audits, we find that practices are ranking on page 2 or page 3 for keywords that matter. A small push — updated content, internal cross-linking, content cluster strategy, new images — can move those page 2 rankings to page 1 within 30 to 60 days.</p>
+
+  <p>But nobody gives importance to this. Instead, they keep writing new pages, new pages, new pages. This creates <strong>canonical problems.</strong> Google gets confused about which page to rank. The cannibalization kills everything.</p>
+
+  <p>These are basic audit fixes that you can do yourself using free SEO tools. Without knowing a lot of technical stuff, you can fix many of these common issues and start beating your competitors.</p>
+</div>
+
+<!-- ═══ WIX SECTION 7: Who We Work With ═══ -->
+<section class="specialties">
+  <div class="specialties-inner">
+    <h2 style="font-size:28px;font-weight:800;margin-bottom:8px;">Who We Work With</h2>
+    <p style="color:var(--text-secondary);margin-bottom:16px;">We don't work with every niche. Our strength, experience, and data is in healthcare. We work with very few clients at a time because every audit gets our personal attention.</p>
+    <div class="specialty-tags">
+      <span class="specialty-tag">🏥 Medspas</span>
+      <span class="specialty-tag">👨‍⚕️ Doctors</span>
+      <span class="specialty-tag">💉 Pain Management</span>
+      <span class="specialty-tag">🩺 Dermatologists</span>
+      <span class="specialty-tag">🔬 Surgeons</span>
+    </div>
+    <p style="color:var(--text-secondary);margin-top:16px;">We can help you find quick fixes that will drive your traffic <strong>3x to 5x in 30 to 60 days</strong>, beating out your competitors.</p>
+  </div>
+</section>
+
+<!-- ═══ WIX SECTION 8: Final CTA + Form ═══ -->
+<section class="final-cta" id="audit-form">
+  <div class="final-cta-inner">
+    <h2>Get Your Free SEO Audit</h2>
+    <p>We'll send you a personalized video walkthrough showing exactly where your site is losing patients — and what to fix first. No pitch call. No obligation.</p>
+
+    <div class="form-mock">
+      <div class="form-row">
+        <label class="form-label">Your Name *</label>
+        <input type="text" class="form-input" placeholder="Dr. Jane Smith">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Email Address *</label>
+        <input type="email" class="form-input" placeholder="jane@yourpractice.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Website URL *</label>
+        <input type="url" class="form-input" placeholder="https://yourpractice.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Practice Type</label>
+        <input type="text" class="form-input" placeholder="Medspa, Doctor, Surgeon, etc.">
+      </div>
+      <button class="cta-btn form-submit">Get My Free Video Audit →</button>
+      <p class="form-note">We'll review your site and send the audit within 48 hours. No spam, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WIX SECTION 9: Byline ═══ -->
+<div class="byline">
+  <div class="byline-avatar">M</div>
+  <div class="byline-text">
+    <strong>By Madhan</strong> · Founder, Intellius Medical
+  </div>
+</div>
+
+<!-- ═══ MOBILE: Sticky CTA ═══ -->
+<div class="sticky-cta">
+  <a href="#audit-form" class="cta-btn">Get Your Free Audit →</a>
+</div>
+
+</body>
+</html>
